@@ -9,15 +9,35 @@
 
 ## Project Overview
 
-I built a fully functional Security Operations Centre (SOC) home lab entirely on AWS cloud infrastructure — no local VMs, no shortcuts. The goal was simple: simulate a real enterprise environment, attack it with documented threat techniques, and prove I could detect and investigate every single one using Splunk as my SIEM.
+**What I Built:**
+A cloud-based Security Operations Centre deployed on AWS, complete with a live Windows endpoint, real-time log ingestion pipelines, and a Splunk SIEM configured to detect active threats as they happen. Every component mirrors what you would find in a real enterprise SOC environment.
 
-This project covers the complete SOC analyst workflow — from infrastructure deployment and log ingestion, through custom detection engineering, to hands-on attack simulation and incident investigation — all mapped to the MITRE ATT&CK framework.
+**The Goal:**
+To go beyond theory by simulating real attack behaviour across five MITRE ATT&CK techniques, then practising the full analyst workflow, log analysis, threat detection, alert triage, incident investigation, and drawing evidence-based conclusions from raw security event data.
+
+**What Makes This Different:**
+I architected the infrastructure from scratch, wrote every detection rule manually in Splunk SPL, troubleshot real configuration gaps, including enabling PowerShell Script Block Logging and Process Creation Auditing, and investigated every alert the way a working analyst would. The attacks were real. The detections were real. The investigation was real.
+
+## **Tools & Technologies Used:**
+
+| Category | Tools |
+|---|---|
+| Cloud Infrastructure | AWS EC2, AWS VPC, AWS IAM, AWS S3 |
+| Cloud Logging | AWS CloudTrail |
+| SIEM & Detection | Splunk Enterprise, Splunk SPL, Splunk Universal Forwarder |
+| Target Endpoint | Windows Server 2022 |
+| Server OS | Ubuntu 22.04 |
+| Attack Simulation | PowerShell, Windows built-in tools |
+| Threat Framework | MITRE ATT&CK |
+| Diagramming | draw.io |
 
 ---
 
 ## Lab Architecture
 
 ![SOC Home Lab Architecture](architecture/soc-lab-architecture.png)
+
+---
 
 | Component | Details |
 |---|---|
