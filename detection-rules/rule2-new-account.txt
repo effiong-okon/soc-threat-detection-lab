@@ -1,0 +1,3 @@
+index=windows EventCode=4720
+| table _time, host, EventCode, name, SAMAccountName, src_user
+| sort -_time

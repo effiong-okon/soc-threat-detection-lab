@@ -1,0 +1,3 @@
+index=windows EventCode=4104
+| table _time, host, EventCode, Message
+| sort -_time

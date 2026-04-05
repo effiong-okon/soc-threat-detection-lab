@@ -1,0 +1,4 @@
+index=windows EventCode=4688
+| where NOT match(New_Process_Name, "(?i)splunk")
+| table _time, host, EventCode, New_Process_Name, Process_Command_Line
+| sort -_time
