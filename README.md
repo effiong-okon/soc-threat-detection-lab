@@ -255,6 +255,12 @@ The dashboard includes:
 
 ---
 
+## Phase 7 — Incident Report
+
+Following the attack simulation, I produced a formal incident report documenting the brute force attack investigation, covering the full timeline, indicators of compromise, MITRE ATT&CK mapping, impact assessment, and remediation recommendations. 
+
+[View Incident Report — INC-2026-001 (PDF)](incident-reports/Incident_Report_INC-2026-001_Effiong_Okon%20(1).pdf)
+
 ## Key Takeaways
 
 The technical setup matters, but what I actually learned is how to think. Every alert I investigated forced me to ask the same questions a real analyst asks: What happened? Who did it? When? Is this normal for this machine? What came before and after? The SIEM is just the tool; the thinking is the job.
