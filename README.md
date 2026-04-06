@@ -10,13 +10,13 @@
 ## Project Overview
 
 **What I Built:**
-A cloud-based Security Operations Centre deployed on AWS, complete with a live Windows endpoint, real-time log ingestion pipelines, and a Splunk SIEM configured to detect active threats as they happen. Every component mirrors what you would find in a real enterprise SOC environment.
+A cloud-based Security Operations Centre deployed on AWS, complete with a live Windows endpoint, real-time log ingestion pipelines, and a Splunk SIEM configured to detect active threats as they happen. This was done to mirror a real enterprise SOC environment.
 
 **The Goal:**
 To go beyond theory by simulating real attack behaviour across five MITRE ATT&CK techniques, then practising the full analyst workflow, log analysis, threat detection, alert triage, incident investigation, and drawing evidence-based conclusions from raw security event data.
 
 **What Makes This Different:**
-I architected the infrastructure from scratch, wrote every detection rule manually in Splunk SPL, troubleshot real configuration gaps, including enabling PowerShell Script Block Logging and Process Creation Auditing, and investigated every alert the way a working analyst would. The attacks were real. The detections were real. The investigation was real.
+I architected the infrastructure from scratch, wrote every detection rule manually in Splunk SPL, troubleshot real configuration gaps, including enabling PowerShell Script Block Logging and Process Creation Auditing, and investigated every alert. The attacks were real. The detections were real. The investigation was real.
 
 ## **Tools & Technologies Used:**
 
@@ -78,12 +78,12 @@ I started by designing the network from the ground up. I created a custom VPC wi
 
 ![Launch Splunk EC2 Instance](screenshots/phase-2-infrastructure/05%20Launch%20the%20Splunk%20EC2%20Instance.jpg)
 
-I paid careful attention to the security group rules by only allowing the strictly necessary ports.
+I paid careful attention to the security group rules, allowing only the strictly necessary ports.
 ---
 
 ### Phase 3: Splunk Enterprise Deployment & Log Forwarding
 
-I installed Splunk Enterprise on the Ubuntu instance and configured it to receive logs on port 9997. I then deployed the Splunk Universal Forwarder on the Windows machine and pointed it at the Splunk server, establishing a real-time log pipeline between the two.
+I installed Splunk Enterprise on the Ubuntu instance and configured it to receive logs on port 9997. I then deployed the Splunk Universal Forwarder on the Windows machine and configured it to point to the Splunk server, establishing a real-time log pipeline between the two.
 
 ![Splunk Enterprise Installed](screenshots/phase-2-infrastructure/06%20successfully%20Install%20Splunk%20Enterprise%20and%20login%20as%20admin.jpg)
 
@@ -101,13 +101,13 @@ I enabled AWS CloudTrail across my account and configured it to store logs in a 
 
 ![AWS CloudTrail Enabled](screenshots/phase-2-infrastructure/09%20Enable%20AWS%20CloudTrail.jpg)
 
-This gave me dual visibility. I could now monitor both what was happening on the endpoint and what was happening at the cloud infrastructure level, from a single Splunk interface.
+This gave me dual visibility. I could now monitor both what was happening on the endpoint and what was happening at the cloud infrastructure level from a single Splunk interface.
 
 ---
 
 ### Phase 5: Custom Detection Rule Engineering
 
-I wrote five custom real-time detection rules in Splunk SPL, each targeting a specific attack technique and mapped to its MITRE ATT&CK ID. These were not default rules — I wrote every query myself, defined the trigger conditions, set the severity levels, and configured them to log to Triggered Alerts in real time.
+I wrote five custom real-time detection rules in Splunk SPL, each targeting a specific attack technique and mapped to its MITRE ATT&CK ID. These were not default rules; I wrote every query myself, defined the trigger conditions, set the severity levels, and configured them to log to Triggered Alerts in real time.
 
 ![All 5 Detection Rules](screenshots/phase-5-detection-rules/11%20%205%20rules%20with%20their%20names%20visible.jpg)
 
@@ -127,7 +127,7 @@ I wrote five custom real-time detection rules in Splunk SPL, each targeting a sp
 
 ### Phase 6: Attack Simulation & SOC Investigation
 
-This is the part that makes the lab real. I simulated five attack techniques directly on the Windows Victim machine using built-in Windows tools, no third-party exploit frameworks needed. For each attack, I documented the simulation, then switched to Splunk to investigate the generated alerts exactly as a SOC analyst would.
+This is the part that makes the lab real. I simulated five attack techniques directly on the Windows Victim machine using built-in Windows tools, no third-party exploit frameworks. For each attack, I documented the simulation, then switched to Splunk to investigate the generated alerts exactly.
 
 ---
 
@@ -312,5 +312,9 @@ soc-home-lab/
 ## Connect With Me
 
 I am actively looking for SOC Analyst opportunities. Feel free to reach out.
+
+- 🔗 LinkedIn: [Okon Effiong](https://www.linkedin.com/in/okon-effiong/)
+- 📧 Email: Iameffiong01@gmail.com
+- 🐙 GitHub: [effiong-okon](https://github.com/effiong-okon/soc-threat-detection-lab)
 
 *This lab was built entirely by me, from infrastructure to investigation. Every configuration decision, troubleshooting step, and analyst conclusion documented here reflects hands-on work — not theory.*
