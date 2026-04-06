@@ -231,6 +231,30 @@ What I found: All seven reconnaissance binaries executed within a 7-second windo
 
 ---
 
+## Splunk Threat Detection Dashboard
+
+To complete the project, I built a real-time SOC dashboard inside Splunk, consolidating all five attack detections into a single monitoring view. This mirrors what a tier-1 SOC analyst would use for continuous monitoring during a shift, with colour-coded severity indicators, a live event feed, and full MITRE ATT&CK technique mapping.
+
+![Splunk Dashboard Overview](screenshots/phase-6-attack-simulation/25-splunk-dashboard-overview.jpg)
+
+![MITRE ATT&CK Summary Table](screenshots/phase-6-attack-simulation/26-splunk-mitre-summary-table.jpg)
+
+![Live Security Event Feed Part 1](screenshots/phase-6-attack-simulation/27-splunk-live-log-feed.jpg)
+
+![Live Security Event Feed Part 2](screenshots/phase-6-attack-simulation/27-splunk-live-log-feed%202.jpg)
+
+![Attack Timeline](screenshots/phase-6-attack-simulation/28-splunk-attack-timeline.jpg)
+
+The dashboard includes:
+- Colour-coded single-value counters for new accounts, privilege escalation events, and PowerShell executions
+- Brute force failed login attempts plotted as a bar chart over time
+- Pie chart showing the most targeted accounts during the attack simulation
+- Full attack timeline with all five MITRE ATT&CK techniques plotted as a line chart
+- MITRE ATT&CK detection summary table with technique name, severity rating, description, and event count
+- Live security event feed showing the 20 most recent alerts with technique and severity columns
+
+---
+
 ## Key Takeaways
 
 The technical setup matters, but what I actually learned is how to think. Every alert I investigated forced me to ask the same questions a real analyst asks: What happened? Who did it? When? Is this normal for this machine? What came before and after? The SIEM is just the tool; the thinking is the job.
